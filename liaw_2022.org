@@ -1,0 +1,134 @@
+#+STARTUP: inlineimages
+#+OPTIONS: num:nil toc:nil reveal_slide_number:"c/t" 
+#+REVEAL_HLEVEL: 1
+#+REVEAL_THEME: night
+#+REVEAL_TRANS: fade
+#+Title: Library In a Week 2022 - Algorithms
+#+Author: Jeff Garland && Marshall Clow
+#+Email: jeff@crystalclearsoftware.com
+#+date: 2022-04-30
+
+#+BEGIN_NOTES
+
+
+For this weeks workshop we revist the topic of algorithms.  
+
+Algorithms are fundamental to good programs and libraries.  
+
+#+END_NOTES
+
+* Intro
+#+BEGIN_QUOTE
+"thunder is impressive; but it is lightning that does all the work" -Mark Twain (1907)
+#+END_QUOTE
+
+#+BEGIN_NOTES
+- How many of you have been to c++now before?
+- Year 14 of liaw
+- How many boost developers here?
+#+END_NOTES
+* What is this session?
+** Workshop
+- Learn by doing – work on libraries
+- Different topic every year 
+- Meet every day to present, discuss progress
+#+BEGIN_NOTES
+- Year 14 of liaw
+#+END_NOTES
+** “Self Organizing”
+- Platform for learning from peers
+- About C++, Boost Development, etc
+#+ATTR_REVEAL: :frag roll-in
+- Community Building
+- Create contributors
+- Create connections
+** Ways to participate
+- Please participate!
+- Session(s) are meant to be interactive
+- Shaped/run by the participants
+- Things you can do
+  - Research, Write Code, Present
+  - Come to daily sessions and provide input
+* Algorithms
+- essential elements of programs and libraries
+- smallest unit of reusable code
+- implementing good algorithms is difficult
+  - generic algorithms especially
+** design considerations
+- typically a single function, how hard could it be?
+- what data structure(s)?
+- inputs and outputs
+  - collections?
+  - iterators?
+  - ranges?
+- support for concurrency?
+  - simd or other
+  - explicit or implicit?
+** measuring
+#+BEGIN_NOTES
+- throwing away of information
+#+END_NOTES
+- breadth of application
+  - works only with std::vector
+  - works with all random access containers
+  - works with all random access ranges
+- performance
+  - micro benchmarks
+- complexity analysis
+  - in 2022 is it useful?
+  - mostly to prevent terrible design
+** potential projects
+*** boost.algorithm contributions
+- good set of algorithms
+- in need of more!
+- in need of better documentation
+*** algorithms from std
+- c++17/20/23 algorithms from std
+  - ~midpoint~ and ~lerp~
+- c++20 bit operations (header ~<bit>~)
+  - rotate: ~rotl~, ~rotr~
+  - counting: ~countl_zero~, ~countr_one~, ~popcount~
+*** ranges algorithms 23
+- ~contains~
+- ~find_last~
+- ~fold_left~, ~fold_right~
+- ~iota~
+- ~shift_left~, ~shift_right~
+- ~starts_with~, ~ends_with~
+*** c++17 
+- ~uninitialized_move~, ~uninitialized_move_n~
+- ~uninitialized_default_construct~
+- ~uninitialized_value_construct~
+- ~destroy~, ~destroy_n~, ~destroy_at~
+*** c++17 and c++20 algorithms
+- ~sample~
+- ~reduce~, ~transform_reduce~
+- ~construct_at~
+- ~inclusive_scan~, ~exclusive_scan~, ~transform_*_scan~
+- ~shift_left~, ~shift_right~
+#+BEGIN_NOTES
+=== Not included here ===
+ All the ranges algorithms
+ All the parallel algorithms
+I’m a bit confused as I think you already have a bunch of these — written — so are you thinking the task would be documentation?
+
+https://www.boost.org/doc/libs/1_78_0/libs/algorithm/doc/html/algorithm/not_yet_documented_cxx17_algos.html
+
+Right; those need better tests and docs.  I’m going to have to convince myself that they’re correct, too ;-)
+[ Since I wrote them before C++17 shipped, and the committee meddled with the definitions several times ]
+
+Also, that’s not all of the C++17 ones.
+#+END_NOTES
+** Boost Development Steps
+- Get Boost tree (release or git)
+- fork the repo for the library
+- clone fork into boost tree
+- checkout on branch
+https://github.com/boostorg/wiki/wiki/Getting-Started%3A-Cheat-Sheet
+** Approximate Day Plan
+- meetup here 'during lunch' 10:30 MDT 
+- day 1: Get Organized
+   - Selection of projects to attack
+   - Assignments and teaming
+- day 2 - 4: work, daily meetups
+- day 5: Wrap up – future directions
